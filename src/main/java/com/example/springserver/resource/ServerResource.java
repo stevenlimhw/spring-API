@@ -6,6 +6,7 @@ import static org.springframework.http.HttpStatus.OK;
 
 import java.io.IOException;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 import com.example.springserver.enums.Status;
 import com.example.springserver.model.Response;
@@ -31,7 +32,7 @@ public class ServerResource {
     }
 
     @GetMapping("/list")
-    public ResponseEntity<Response> getServers() {
+    public ResponseEntity<Response> getServers() throws InterruptedException {
         return ResponseEntity.ok(
                 Response.builder()
                         .timeStamp(now())
