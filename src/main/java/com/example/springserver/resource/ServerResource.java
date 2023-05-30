@@ -32,7 +32,7 @@ public class ServerResource {
     }
 
     @GetMapping("/list")
-    public ResponseEntity<Response> getServers() throws InterruptedException {
+    public ResponseEntity<Response> getServers() {
         return ResponseEntity.ok(
                 Response.builder()
                         .timeStamp(now())
